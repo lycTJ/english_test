@@ -1,0 +1,10 @@
+<% if(parm.length) { %> <% parm.forEach(result => { %>
+  <h3>SiteName: <%=result.unit[0][0].q%></h3>
+  <% }) %> <% } %>
+
+<p>題目: <%=parm.unit[0][0].que%></p>
+  <p>選項: <%=parm.unit[0][0].option.A%></p>
+  <p>答案: <%=parm.unit[0][0].answer%></p>
+  <p>翻譯: <%=parm.unit[0][0].translate%></p>
+
+

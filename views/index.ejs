@@ -1,5 +1,23 @@
 <div>
-  <% if(parm.length) { %> <% parm.forEach(result => { %>
-  <h3>SiteName: <%=result.SiteName%></h3>
+  <% if(parm.length) { %> <% parm.forEach(data => { %>
+  <p>題號: <%=data.id%></p>
+  <h5>題目: <%=data.que%></h5>
+  <% if(data.answer == 'C') { %>
+  <script>
+    alert("AAA");
+  </script>
+  <% } %>
+  <input type="radio" name="radio" value="A" /> 選項A: <%=data.option.A%>
+  <br />
+  <input type="radio" name="radio" value="B" />選項B: <%=data.option.B%>
+  <br />
+  <input type="radio" name="radio" value="C" />選項C: <%=data.option.C%>
+  <br />
+  <input type="radio" name="radio" value="D" />選項D: <%=data.option.D%>
+
+  <p>答案: <%=data.answer%></p>
+  <p>翻譯: <%=data.translate%></p>
   <% }) %> <% } %>
+
+  <button type="button">提交</button>
 </div>

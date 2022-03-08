@@ -10,25 +10,22 @@ const app = express()
 
 
 app.use(express.static('public'))
-app.use('/css', express.static(__dirname+'public/css'))
+app.use('/css', express.static( __dirname+'public/css'))
 
 
 app.use(expressLayouts)
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');  
 
+// var file = "data.json"
 
-
-
-
-
-var file = "data.json"
+var file = "test.json"
 
 var result = JSON.parse(fs.readFileSync(file))
 var fir = result
 var strResult = JSON.stringify(fir)
 
-
+console.log(result[1].id)
 
 app.get("/", (req,res)=>{
     console.log("->",req.url)
