@@ -1,23 +1,25 @@
 <div>
-  <% if(parm.length) { %> <% parm.forEach(data => { %>
-  <p>題號: <%=data.id%></p>
-  <h5>題目: <%=data.que%></h5>
-  <% if(data.answer == 'C') { %>
+  <% if(data) { %> <% for(var i=0;i< data.length;i++) {%>
+  <p>題號: <%=data[i].id%></p>
+  <h5>題目: <%=data[i].que%></h5>
   <script>
-    alert("AAA");
+    alert("radio<%= i %>");
   </script>
-  <% } %>
-  <input type="radio" name="radio" value="A" /> 選項A: <%=data.option.A%>
+  <input type="radio" name="radio<%= i %>" value="A" /> 選項A:
+  <%=data[i].option.A%>
   <br />
-  <input type="radio" name="radio" value="B" />選項B: <%=data.option.B%>
+  <input type="radio" name="radio<%= i %>" value="B" />選項B:
+  <%=data[i].option.B%>
   <br />
-  <input type="radio" name="radio" value="C" />選項C: <%=data.option.C%>
+  <input type="radio" name="radio<%= i %>" value="C" />選項C:
+  <%=data[i].option.C%>
   <br />
-  <input type="radio" name="radio" value="D" />選項D: <%=data.option.D%>
+  <input type="radio" name="radio<%= i %>" value="D" />選項D:
+  <%=data[i].option.D%>
 
-  <p>答案: <%=data.answer%></p>
-  <p>翻譯: <%=data.translate%></p>
-  <% }) %> <% } %>
+  <p>答案: <%=data[i].answer%></p>
+  <p>翻譯: <%=data[i].translate%></p>
+  <% } %> <% } %>
 
   <button type="button">提交</button>
 </div>

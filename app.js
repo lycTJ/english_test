@@ -25,7 +25,7 @@ var result = JSON.parse(fs.readFileSync(file))
 var fir = result
 var strResult = JSON.stringify(fir)
 
-console.log(result[1].id)
+// console.log(result[1].id)
 
 app.get("/", (req,res)=>{
     console.log("->",req.url)
@@ -33,7 +33,7 @@ app.get("/", (req,res)=>{
     
     // res.send(strResult)
     
-    res.render("index",{title: "English-testing",parm:result})
+    res.render("index",{title: "English-testing",data:result})
 })
 
 
