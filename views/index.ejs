@@ -1,11 +1,12 @@
 <div>
   <h2>Unit1</h2>
+
   <% if(data.length >0) { %> <% for(var i=0;i< data.length;i++) {%>
-    <h5><%=data[i].id%>: <%=data[i].que%></h5>
+    <h5 class="dataLen"><%=data[i].id%>: <%=data[i].que%></h5>
     <div class="container">
       <div class="row">
         <div class="col align-self-start">
-          <input type="radio" name="radio<%= i %>" value="A" /> 選項A:
+          <input type="radio" name="radio<%= i %>" value="A" />選項A:
           <%=data[i].option.A%>
           <br>
           <input type="radio" name="radio<%= i %>" value="B" />選項B:
@@ -21,8 +22,9 @@
           
         </div>
         <div class="col align-self-end">
-          <div id="showDiv<%= i %>" class="col align-self-end">
-            <p>答案: <%=data[i].answer%></p>
+          <div id="showDiv<%= i %>" class="col align-self-end" style="display: none;">
+            <label for="ans">答案: </label>
+            <p id="ans"><%=data[i].answer%></p>
             <p>翻譯: <%=data[i].translate%></p>
           </div>
         </div>
@@ -31,28 +33,11 @@
     
     <% } %> <% } %>
     <div class="container mx-2 my-2 py-5">
-      <button type="button" id="btn" class="btn btn-primary ">顯示答案</button>
-
-
+      <button type="button" id="btnAns" class="btn btn-primary ">顯示答案</button>
     </div>
-    
+    <script src="/js/script.js"></script>
     <script>
-      var btn = document.getElementById("btn");
-      btn.addEventListener("click", () => {
-        showDiv();
-      });
-
-      function showDiv() {
-        for (var i = 0; i < 2; i++) {
-          var showDiv = document.getElementById("showDiv" + i);
-          // var textlistn = document.getElementById("textlistn");
-          if (showDiv.style.display === "none") {
-            showDiv.style.display = "block";
-          } else {
-            showDiv.style.display = "none";
-          }
-        }
-      }
+      document.getElementsByName("input[name='radio']:checked").style.backgroundcolor = "red"
     </script>
   </div>
 </div>

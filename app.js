@@ -1,5 +1,6 @@
 const express = require("express")
 const expressLayouts = require('express-ejs-layouts');
+const res = require("express/lib/response");
 // const fileUpload = require('express-fileupload');
 // const session = require('express-session');
 // const cookieParser = require('cookie-parser');
@@ -22,8 +23,7 @@ app.set('view engine', 'ejs');
 var file = "test.json"
 
 var result = JSON.parse(fs.readFileSync(file))
-var fir = result
-var strResult = JSON.stringify(fir)
+// var strResult = JSON.stringify(fir)
 
 // console.log(result[1].id)
 
