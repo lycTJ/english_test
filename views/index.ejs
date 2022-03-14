@@ -3,13 +3,13 @@
 
   <% if(data.length >0) { %> <% for(var i=0;i< data.length;i++) {%>
     <h5 class="dataLen"><%=data[i].id%>: <%=data[i].que%></h5>
-    <div class="container">
+    <div class="container mb-3">
       <div class="row">
         <div class="col align-self-start">
           <input type="radio" name="radio<%= i %>" value="A" />選項A:
           <%=data[i].option.A%>
           <br>
-          <input type="radio" name="radio<%= i %>" value="B" />選項B:
+          <input type="radio" name="radio<%= i %>" value="B">選項B:
           <%=data[i].option.B%>
           <br>
           <input type="radio" name="radio<%= i %>" value="C" />選項C:
@@ -19,15 +19,16 @@
           <%=data[i].option.D%>
         </div>
         <div class="col align-self-center">
-          
+
         </div>
         <div class="col align-self-end">
           <div id="showDiv<%= i %>" class="col align-self-end" style="display: none;">
-            <label for="ans">答案: </label>
-            <p id="ans"><%=data[i].answer%></p>
+            <p style="display: inline;" >答案: </p>
+            <p id="ans<%= i%>"  style="display: inline;"class="fs-2"><%=data[i].answer%></p>
             <p>翻譯: <%=data[i].translate%></p>
           </div>
         </div>
+        <hr size="8px"  width="100%">
       </div>
     </div>
     

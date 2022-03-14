@@ -21,6 +21,18 @@
     },
     "answer": "B",
     "translate": "2一二三"
+},
+{
+    "id": "3",
+    "que": "3que?",
+    "option": {
+        "A":"3A..",
+        "B":"3B..",
+        "C":"3C..",
+        "D":"3D.."
+    },
+    "answer": "C",
+    "translate": "3一二三"
 }
 ]
 
