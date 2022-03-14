@@ -29,14 +29,16 @@ var result = JSON.parse(fs.readFileSync(file))
 
 app.get("/", (req,res)=>{
     console.log("->",req.url)
-    
-    
     // res.send(strResult)
     
     res.render("index",{title: "English-testing",data:result})
 })
 
-
+app.get("/submit-quesion", (req, res)=>{
+    console.log("->", req.url)
+    res.send("hello")
+    
+})
 
 
 
