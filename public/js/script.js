@@ -24,7 +24,7 @@ function submit() {
         
         //   alert("您勾選的項目 : " + selected.join());
         if (selected.join() == ans.textContent){
-            ans.style.color= "green"
+            ans.style.color= "#62E759"
         }
         else{
             ans.style.color= "red"

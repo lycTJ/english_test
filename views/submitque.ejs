@@ -1,0 +1,58 @@
+<div class="row">
+  <h1>目前共<%= data.length %>題</h1>
+  <div class="col align-self-start">
+    <form action="/sendque" method="POST">
+      <label for="num">題號：</label>
+      <input type="text" name="num" autocomplete="off" value="" /><br />
+      <label for="que">題目：</label>
+      <input type="text" name="que" /><br />
+      <label for="opa">選項A：</label>
+      <input type="text" name="opa" /><br />
+      <label for="opb">選項B：</label>
+      <input type="text" name="opb" /><br />
+      <label for="opc">選項C：</label>
+      <input type="text" name="opc" /><br />
+      <label for="opd">選項D：</label>
+      <input type="text" name="opd" /><br />
+      <label for="ans">答案：</label>
+      <input type="text" name="ans" /><br />
+      <label for="trans">翻譯：</label>
+      <input type="text" name="trans" /><br />
+
+      <button type="submit">送出</button>
+    </form>
+  </div>
+  <div class="col align-self-center">
+    <% if(data.length >0) { %> <% for(var i=0;i< data.length;i++) {%>
+    <h5 class="dataLen"><%=data[i].id%>: <%=data[i].que%></h5>
+    <div class="container mb-3">
+      <div class="row">
+        <div class="col align-self-start">
+          <p name="radio<%= i %>">選項A: <%=data[i].option.A%></p>
+          <p name="radio<%= i %>">選項B: <%=data[i].option.B%></p>
+          <p name="radio<%= i %>">選項C: <%=data[i].option.C%></p>
+          <p name="radio<%= i %>">選項D: <%=data[i].option.D%></p>
+        </div>
+        <div class="col align-self-center"></div>
+        <div class="col align-self-end">
+          <div id="showDiv<%= i %>" class="col align-self-end">
+            <p style="display: inline">答案:</p>
+            <p id="ans<%= i%>" style="display: inline" class="fs-2">
+              <%=data[i].answer%>
+            </p>
+            <p>翻譯: <%=data[i].translate%></p>
+          </div>
+        </div>
+        <hr size="8px" width="100%" />
+      </div>
+    </div>
+
+    <% } %> <% } %>
+  </div>
+</div>
+<!-- <script src="/js/sub.js"></script> -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous"
+></script>
