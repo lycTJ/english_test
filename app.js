@@ -45,32 +45,35 @@ app.get("/", (req,res)=>{
 app.get("/submit-quesion", (req, res)=>{
     console.log("->", req.url)
    
-    // d = {
-    //     "id": "3",
-    //     "que": "3que?",
-    //     "option": {
-    //         "A":"3A..",
-    //         "B":"3B..",
-    //         "C":"3C..",
-    //         "D":"3D.."
-    //     },
-    //     "answer": "C",
-    //     "translate": "3一二三"
-    // }
-    // result.push(d)
-    // fs.writeFileSync("test.json",JSON.stringify(result),err => {
-    //     if(err){
-    //         console.error("失敗",err)
-    //     }
-    //     console.log("成功")
-    // })
+  
     
     res.render("submitque",{data:result})
 })
 
 app.post('/sendque', function (req, res) {
     console.log(req.body.num)
-    res.send(req.body.que + '謝謝你的回覆');
+    d = {
+        "id": req.body.num,
+        "que": req.body.que,
+        "option": {
+            "A":req.body.opa,
+            "B":req.body.opb,
+            "C":req.body.opc,
+            "D":req.body.opd
+        },
+        "answer": req.body.ans,
+        "translate": req.body.trans
+    }
+    result.push(d)
+    fs.writeFileSync("test.json",JSON.stringify(result),err => {
+        if(err){
+            console.error("失敗",err)
+        }
+        console.log("成功")
+    })
+    
+    res.redirect("/submit-quesion")
+    // res.send(req.body.que + '謝謝你的回覆');
 })
 
 

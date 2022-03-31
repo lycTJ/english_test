@@ -2,24 +2,43 @@
   <h1>目前共<%= data.length %>題</h1>
   <div class="col align-self-start">
     <form action="/sendque" method="POST">
-      <label for="num">題號：</label>
-      <input type="text" name="num" autocomplete="off" value="" /><br />
-      <label for="que">題目：</label>
-      <input type="text" name="que" /><br />
-      <label for="opa">選項A：</label>
-      <input type="text" name="opa" /><br />
-      <label for="opb">選項B：</label>
-      <input type="text" name="opb" /><br />
-      <label for="opc">選項C：</label>
-      <input type="text" name="opc" /><br />
-      <label for="opd">選項D：</label>
-      <input type="text" name="opd" /><br />
-      <label for="ans">答案：</label>
-      <input type="text" name="ans" /><br />
-      <label for="trans">翻譯：</label>
-      <input type="text" name="trans" /><br />
-
-      <button type="submit">送出</button>
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="num" class="form-label">題號：</label>
+          <input type="text" name="num" class="form-control" />
+        </div>
+        <div class="col-12">
+          <label for="que" class="form-label">題目：</label>
+          <input type="text" name="que" class="form-control" />
+        </div>
+        <div class="col-12">
+          <label for="opa" class="form-label">選項A：</label>
+          <input type="text" name="opa" class="form-control" />
+        </div>
+        <div class="col-12">
+          <label for="opb" class="form-label">選項B：</label>
+          <input type="text" name="opb" class="form-control" />
+        </div>
+        <div class="col-12">
+          <label for="opc" class="form-label">選項C：</label>
+          <input type="text" name="opc" class="form-control" />
+        </div>
+        <div class="col-12">
+          <label for="opd" class="form-label">選項D：</label>
+          <input type="text" name="opd" class="form-control" />
+        </div>
+        <div class="col-12">
+          <label for="ans" class="form-label">答案：</label>
+          <input type="text" name="ans" class="form-control" />
+        </div>
+        <div class="col-12">
+          <label for="trans" class="form-label">翻譯：</label>
+          <input type="text" name="trans" class="form-control" />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">送出</button>
+        </div>
+      </div>
     </form>
   </div>
   <div class="col align-self-center">
