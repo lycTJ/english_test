@@ -1,6 +1,15 @@
 <div>
-  <h2>Unit1</h2>
-
+  <div class="row">
+  <div class="col align-self-start">
+    <h2>Unit1</h2>
+  </div>
+  <div class="col align-self-center">
+    <div class="text-end mx-5 show ">
+      <h3>共<%= data.length %>題</h3>
+      <p id="wrong" style="color: red;" class="text-nowrap"></p> 
+    </div>
+</div>
+</div>
   <% if(data.length >0) { %> <% for(var i=0;i< data.length;i++) {%>
     <h5 class="dataLen"><%=data[i].id%>: <%=data[i].que%></h5>
     <div class="container mb-3">
@@ -33,12 +42,17 @@
     </div>
     
     <% } %> <% } %>
-    <div class="container mx-2 my-2 py-5">
-      <button type="button" id="btnAns" class="btn btn-primary ">顯示答案</button>
+    <!-- mx-2 -->
+    <div class=" py-5 my-2  mx-5">
+      <!-- button靠右 -->
+      <!-- <div style="text-align:right;"> -->
+        <button type="button" id="btnAns" class="btn btn-primary" style="float: right;">顯示答案</button>
+      <!-- </div> -->
+      
     </div>
     <script src="/js/script.js"></script>
     <script>
-      document.getElementsByName("input[name='radio']:checked").style.backgroundcolor = "red"
+      // document.getElementsByName("input[name='radio']:checked").style.backgroundcolor = "red"
     </script>
   </div>
 </div>

@@ -43,11 +43,13 @@ app.get("/", (req,res)=>{
 
 
 app.get("/submit-quesion", (req, res)=>{
-    console.log("->", req.url)
-   
-  
-    
+    console.log("->", req.url)   
     res.render("submitque",{data:result})
+})
+
+app.get("/about", (req, res) => {
+    console.log("->", req.url)
+    res.render("about")
 })
 
 app.post('/sendque', function (req, res) {
@@ -71,7 +73,7 @@ app.post('/sendque', function (req, res) {
         }
         console.log("成功")
     })
-    
+
     res.redirect("/submit-quesion")
     // res.send(req.body.que + '謝謝你的回覆');
 })
