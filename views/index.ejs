@@ -1,58 +1,61 @@
 <div>
   <div class="row">
-  <div class="col align-self-start">
-    <h2>Unit1</h2>
-  </div>
-  <div class="col align-self-center">
-    <div class="text-end mx-5 show ">
-      <h3>共<%= data.length %>題</h3>
-      <p id="wrong" style="color: red;" class="text-nowrap"></p> 
+    <div class="col align-self-start">
+      <h2>Unit1</h2>
     </div>
-</div>
-</div>
-  <% if(data.length >0) { %> <% for(var i=0;i< data.length;i++) {%>
-    <h5 class="dataLen"><%=data[i].id%>: <%=data[i].que%></h5>
-    <div class="container mb-3">
-      <div class="row">
-        <div class="col align-self-start">
-          <input type="radio" name="radio<%= i %>" value="A" />選項A:
-          <%=data[i].option.A%>
-          <br>
-          <input type="radio" name="radio<%= i %>" value="B">選項B:
-          <%=data[i].option.B%>
-          <br>
-          <input type="radio" name="radio<%= i %>" value="C" />選項C:
-          <%=data[i].option.C%>
-          <br>
-          <input type="radio" name="radio<%= i %>" value="D" />選項D:
-          <%=data[i].option.D%>
+    <div class="col align-self-center text-end">
+      <div class="row me-5">
+        <div class="col">
+          <h3>共<%= data.length %>題</h3>
         </div>
-        <div class="col align-self-center">
-
+        <div class="col">
+          <h3 id="wrong" style="color: red" class="me-1"></h3>
         </div>
-        <div class="col align-self-end">
-          <div id="showDiv<%= i %>" class="col align-self-end" style="display: none;">
-            <p style="display: inline;" >答案: </p>
-            <p id="ans<%= i%>"  style="display: inline;"class="fs-2"><%=data[i].answer%></p>
-            <p>翻譯: <%=data[i].translate%></p>
-          </div>
-        </div>
-        <hr size="8px"  width="100%">
       </div>
     </div>
-    
-    <% } %> <% } %>
-    <!-- mx-2 -->
-    <div class=" py-5 my-2  mx-5">
-      <!-- button靠右 -->
-      <!-- <div style="text-align:right;"> -->
-        <button type="button" id="btnAns" class="btn btn-primary" style="float: right;">顯示答案</button>
-      <!-- </div> -->
-      
-    </div>
-    <script src="/js/script.js"></script>
-    <script>
-      // document.getElementsByName("input[name='radio']:checked").style.backgroundcolor = "red"
-    </script>
   </div>
+  <% if(data.length >0) { %> <% for(var i=0;i< data.length;i++) {%>
+  <h5 class="dataLen"><%=data[i].id%>: <%=data[i].que%></h5>
+  <div class="container mb-3">
+    <div class="row">
+      <div class="col align-self-start">
+        <input type="radio" name="radio<%= i %>" value="A" />選項A:
+        <%=data[i].option.A%>
+        <br />
+        <input type="radio" name="radio<%= i %>" value="B" />選項B:
+        <%=data[i].option.B%>
+        <br />
+        <input type="radio" name="radio<%= i %>" value="C" />選項C:
+        <%=data[i].option.C%>
+        <br />
+        <input type="radio" name="radio<%= i %>" value="D" />選項D:
+        <%=data[i].option.D%>
+      </div>
+
+      <div class="col align-self-end text-end">
+        <div
+          id="showDiv<%= i %>"
+          class="col align-self-end"
+          style="display: none"
+        >
+          <p style="display: inline">答案:</p>
+          <p id="ans<%= i%>" style="display: inline" class="fs-2">
+            <%=data[i].answer%>
+          </p>
+          <p>翻譯: <%=data[i].translate%></p>
+        </div>
+      </div>
+      <hr size="8px" width="100%" />
+    </div>
+  </div>
+
+  <% } %> <% } %>
+  <!-- mx-2 -->
+  <div class="py-5 my-2 mx-5 text-center">
+    <!-- button靠右 -->
+    <!-- <div style="text-align:right;"> -->
+    <button type="button" id="btnAns" class="btn btn-primary">顯示答案</button>
+    <!-- </div> -->
+  </div>
+  <script src="/js/script.js"></script>
 </div>
